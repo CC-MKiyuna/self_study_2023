@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\RouteController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +19,27 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+//個人勉強用のコンテナ
+
+//           ----------------------------ルーティング------------------------------------
+//
+//自己学習ルート管理ページ
+Route::get('/index', [IndexController::class, 'index'])->name('index');
+Route::get('/route_check', [RouteController::class, 'index']);
+
+
+//  ルートリダイレクト、/hereで検索した場合に/thereのサイトにリダイレクトする
+Route::view('/here', 'redirect_here');
+Route::view('/there', 'redirect_there');
+// Route::redirect('/here', '/there');         //  先にhereやthereのルートを定義しておかないとredirectできない
+Route::redirect('/here', '/there', 301);      //   301を指定しないときは302になる。302は一時的、301は恒久的なリダイレクト
+
+//  パラメータ制約
+Route::get('/paramate_vali/{id}', [RouteController::class, 'paramete_varidation'])
+    ->where('id', '[0-9]+')->name('paramete_varidation');
+
+//  ミドルウェア用の基礎
+Route::get('/home', [RouteController::class, 'home'])->name('home');
+Route::get('/route_check', [RouteController::class, 'middleware_practice'])->middleware('HogeMiddleware')->name('middleware.validation');
