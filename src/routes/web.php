@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\RouteController;
+use App\Http\Controllers\QrcodeController;
 
 
 /*
@@ -43,3 +44,8 @@ Route::get('/paramate_vali/{id}', [RouteController::class, 'paramete_varidation'
 //  ミドルウェア用の基礎
 Route::get('/home', [RouteController::class, 'home'])->name('home');
 Route::get('/route_check', [RouteController::class, 'middleware_practice'])->middleware('HogeMiddleware')->name('middleware.validation');
+
+//Qrコード
+Route::get('/qrcode_form', [QrcodeController::class, 'qr_form'])->name('qr');
+Route::post('/qr_result/submit', [QrcodeController::class, 'qr_result'])->name('qr.store');
+// Route::get('/qr_result', [QrcodeController::class, 'qr_result'])->name('qr');

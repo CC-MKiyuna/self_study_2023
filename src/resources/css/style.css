@@ -1,0 +1,36 @@
+.wrapper .container{
+    max-width:1000px;
+    margin:0px auto;
+    padding:80px 0px;
+}
+
+#video{
+    top: 200px;
+    left: 0px;
+    visibility: hidden;
+}
+
+#camera-canvas{
+    top: 0px;
+    left: 0px;
+    z-index: 50;
+}
+
+#rect-canvas{
+    top: 00px;
+    left: 0px;
+    z-index: 100;
+}
+
+#qr-msg{
+    top: 400px;
+    left: 0px;
+}
+span{
+    top: 500px;
+    left: 0px;
+}
+
+.content{
+    margin-top: 2000px;
+}
