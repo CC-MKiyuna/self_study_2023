@@ -7,37 +7,29 @@
         <link rel="stylesheet" href="/css/style.css">
     </head>
     <body>
-        <div id="wrapper">
-            <video id="video" autoplay muted playsinline></video>
-            <canvas id="camera-canvas"></canvas>
-            <canvas id="rect-canvas"></canvas>
-            <span id="qr-msg">QR</span>
-            <!-- <span id="getstring">取得できていないです</span>
-            <span>製品名</span>
-            <span id="text1">製品名とれていない</span>
-            <span id="text2">QR</span>
-            <span id="text3">QR</span> -->
-
+    <section class="QR" >
+        <div class="container" >
+            <div class="content" >
+                <video id="video" autoplay muted playsinline></video>
+                <canvas id="camera-canvas"></canvas>
+                <canvas id="rect-canvas"></canvas>
+                <span id="qr-msg">QR</span>
+            </div>
         </div>
-        <!-- <div>
-            <p>取得した文字列</p>
-            <p id=getstring>取得できていないです</p>
-            <p>製品名</p>
-            <p id="text1"></p>
-            <p>商品名称</p>
-            <p id="text2"></p>
-            <p>シリアルNo.</p>
-            <p id="text3"></p>
-        </div> -->
-
+    </section>
+    <section class="product" >
+        <div class="container" >
+            <div class="content" >
+                <p id="text1">製品名とれていない</p>
+                <p id="text2">商品名称とれていない</p>
+                <p id="text3">シリアルコードとれていない</p>
+                
+            </div>
+        </div>
+    </section>
+                   
+    <script src="{{ asset('/js/jsQR.js') }}"></script>
+    <script src="{{ asset('/js/script.js') }}"></script>
         
-        <script src="{{ asset('/js/jsQR.js') }}"></script>
-        <script src="{{ asset('/js/script.js') }}"></script>
-        
-    <!-- QRコードの情報取得 -->
-    
-   
-    
-
-</body>
+    </body>
 </html>

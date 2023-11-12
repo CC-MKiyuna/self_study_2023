@@ -48,4 +48,4 @@ Route::get('/route_check', [RouteController::class, 'middleware_practice'])->mid
 //Qrコード
 Route::get('/qrcode_form', [QrcodeController::class, 'qr_form'])->name('qr');
 Route::post('/qr_result/submit', [QrcodeController::class, 'qr_result'])->name('qr.store');
-Route::get('/qr_result', [QrcodeController::class, 'qr_result'])->name('qr');
+// Route::get('/qr_result', [QrcodeController::class, 'qr_result'])->name('qr');
