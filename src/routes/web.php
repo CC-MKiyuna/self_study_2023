@@ -46,6 +46,8 @@ Route::get('/home', [RouteController::class, 'home'])->name('home');
 Route::get('/route_check', [RouteController::class, 'middleware_practice'])->middleware('HogeMiddleware')->name('middleware.validation');
 
 //Qrコード
-Route::get('/qrcode_form', [QrcodeController::class, 'qr_form'])->name('qr');
+//WebカメラによるQRコード読み込み
+Route::get('/qrcode_form', [QrcodeController::class, 'qr_form'])->name('qr_video');
+//ファイルアップロードによるQRコード読み込み
+Route::get('/qrcode_file', [QrcodeController::class, 'qr_file'])->name('qr_file');
 Route::post('/qr_result/submit', [QrcodeController::class, 'qr_result'])->name('qr.store');
-// Route::get('/qr_result', [QrcodeController::class, 'qr_result'])->name('qr');
