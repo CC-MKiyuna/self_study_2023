@@ -28,7 +28,7 @@ class TestMail extends Mailable
     public function build()
     {
         return $this
-        ->subject('[15年無償保証]システム保証書の申請が届きました。')
+        ->subject('[15年-----]保証書の申請が届きました。')
         ->view('mail')
         ->to($this->email)
         ->with([
