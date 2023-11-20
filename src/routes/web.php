@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\RouteController;
 use App\Http\Controllers\QrcodeController;
+use App\Http\Controllers\MailController;
 
 
 /*
@@ -52,4 +53,5 @@ Route::get('/qrcode_form', [QrcodeController::class, 'qr_form'])->name('qr_video
 Route::get('/qrcode_file', [QrcodeController::class, 'qr_file'])->name('qr_file');
 Route::post('/qr_result/submit', [QrcodeController::class, 'qr_result'])->name('qr.store');
 
-
+// メール
+Route::get('/mail/send', [MailController::class, 'send'])->name('mail.send');
