@@ -30,7 +30,7 @@
     }
     image.src = src
     }
-     reader.readAsDataURL(file)
+     reader.readAsDataURL(file) //調べなおす
      error.innerHTML = ''
    } catch (e) {
      inputQRCode.value = ''
@@ -50,22 +50,6 @@
 }
 
 
-//  var code = jsQR(imageData.data, contentWidth, contentHeight, {
-//     inversionAttempts: "dontInvert",
-//     });
- 
-//     // 検出結果に合わせて処理を実施
-//     if (code) {
-//        console.log("QRcodeが見つかりました", code);
-//        drawRect(code.location);
-//        // console.log(imageData);
-//        // console.log(code);
-//        // location.href = code.data;
-//        document.getElementById('qr-msg').textContent = `QRコード:${code.data}`;
-//     } else {
-//        console.log("QRcodeが見つかりません…", code);
-//        rectCtx.clearRect(0, 0, contentWidth, contentHeight);
-//        document.getElementById('qr-msg').textContent = `QRコード: 見つかりません`;
-//     }
-//     setTimeout(()=>{ checkImage() }, 500);
-//  }
+// FB
+//  どこで何をしているか、処理が起きる順番追えていないだろう
+// インテンドがそろっていないからそう思う
