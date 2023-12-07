@@ -5,6 +5,8 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\RouteController;
 use App\Http\Controllers\QrcodeController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\UpLoadController;
+
 
 
 /*
@@ -55,3 +57,5 @@ Route::post('/qr_result/submit', [QrcodeController::class, 'qr_result'])->name('
 
 // メール
 Route::get('/mail/send', [MailController::class, 'send'])->name('mail.send');
+// アップロード画像の表示
+Route::get('/up_file', [UploadController::class, 'index'])->name('up_file');

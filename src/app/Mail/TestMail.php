@@ -17,7 +17,8 @@ class TestMail extends Mailable
      * @return void
      */
     public function __construct($email,$name)
-    {
+    {    
+        // メール送信に必要な情報を設定
         $this->name = $name;
         $this->email = $email;    }
     /**
