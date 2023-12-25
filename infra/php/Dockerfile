@@ -15,3 +15,12 @@ RUN apt-get update && \
 COPY ./php.ini /usr/local/etc/php/php.ini
 
 WORKDIR /data
+
+# node用に追記した
+
+# Nodeインストール
+RUN yum install nodejs
+
+
+
+
