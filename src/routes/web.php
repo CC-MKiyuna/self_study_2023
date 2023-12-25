@@ -6,8 +6,8 @@ use App\Http\Controllers\RouteController;
 use App\Http\Controllers\QrcodeController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\UpLoadController;
-
-
+use App\Http\Controllers\PdfController;
+use App\Http\Controllers\FormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,3 +59,29 @@ Route::post('/qr_result/submit', [QrcodeController::class, 'qr_result'])->name('
 Route::get('/mail/send', [MailController::class, 'send'])->name('mail.send');
 // アップロード画像の表示
 Route::get('/up_file', [UploadController::class, 'index'])->name('up_file');
+
+//*****---------------
+// PDF
+//******--------------
+Route::get('/pdf/entry', [PdfController::class, 'entry'])->name('pdf.entry');
+Route::get('/pdf/entry/thanks', [PdfController::class, 'thanks'])->name('pdf.thanks');
+Route::post('/pdf/entry/thanks', [PdfController::class, 'post'])->name('pdf.post');
+Route::get('/pdf/entry/thanks/download', [PdfController::class, 'downloadPdf'])->name('pdf.download');
+
+//*****---------------
+// LiveWire - TypingGame
+//******--------------
+Route::get('/livewire/typing', function () {
+    return view('TypingGame.index');
+});
+
+// ベーシック認証
+Route::group(['middleware' => 'basicauth'], function() {
+    Route::get('/sample/form', [FormController::class, 'index'])->name('form.index');
+    Route::get('/sample', [FormController::class, 'sample'])->name('sample.index');  
+});
+
+// Reactのサンプルコード
+Route::get('/react', function () {
+    return view('react_study');
+ });
